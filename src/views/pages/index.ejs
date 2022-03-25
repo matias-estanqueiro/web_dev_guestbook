@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+    <body class="container">
+        <nav>
+            <%- include('../partials/nav') %> 
+        </nav>      
+        
+        <main class="col-md-8 offset-md-2">
+            <% if(entrada.length) { %>
+                <% entrada.forEach((elem) => { %>
+                    <div class="card m-2">
+                        <div class="card-header bg-primary text-white">
+                            <p><%= elem.publicado %></p>
+                        </div>
+                        <div class="card-body">
+                            <h2><%= elem.nombre %></h2>
+                            <p><%= elem.contenido %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No entries! <a href="/new_entry">Add One!</a></p>
+            <% } %>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer') %>
+        </footer>
+
+    </body>
+</html>
